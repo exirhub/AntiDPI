@@ -1,0 +1,18 @@
+{
+  "source_commit": "e9781c4bc42d5df0543816f5a5cf1d088e3d63f6",
+  "filename": "AntiDPI-ubuntu24-amd64.run",
+  "sha256": "6713dbd07d551df1693a15d0d911931c192591700527164e1a12e3b89181f20a",
+  "size_bytes": 13099126,
+  "target": "Ubuntu 24.04 x86_64",
+  "validation_passed": [
+    "native isolated login/API/assets",
+    "output-server and x-ui-backup API availability",
+    "payload integrity",
+    "external SHA-256",
+    "desktop/mobile installation page and download links"
+  ],
+  "validation_pending": [
+    "complete systemd install/update on clean server",
+    "real remote 3x-ui provisioning"
+  ]
+}
