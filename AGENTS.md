@@ -17,3 +17,9 @@ The application source is maintained in the private repository `exirhub/anti-dpi
 ## Current release validation
 
 Published build e9781c4 passed clean Ubuntu 24.04 systemd install, installed HTTPS/API/TCP/service checks and upgrade preserving accounts/state in run 37696565225. Real remote 3x-ui provisioning remains unverified.
+
+## Installation-page maintenance
+
+- Keep the public `install.sh` bootstrap identical to private `site/install.sh`; it is separate from the private root installer. It downloads only the compiled package and matching checksum over HTTPS, verifies before execution, cleans temporary files and forwards options such as `--update`.
+- Keep the page concise, with Persian (RTL) as the default and an English toggle. Commands stay LTR in both languages; language switching preserves the install/update selection.
+- Keep both README install commands consistent with the page. Website/bootstrap edits do not require recompiling an unchanged application binary; retain its exact built source commit in `RELEASE.json`.

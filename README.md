@@ -1,18 +1,21 @@
 # AntiDPI
 
-Install AntiDPI on Ubuntu 24.04 x86_64 from https://exirhub.github.io/AntiDPI/.
+[نصب / Installation](https://exirhub.github.io/AntiDPI/) · Ubuntu 24.04 x86_64
 
-Download `AntiDPI-ubuntu24-amd64.run` and `SHA256SUMS` into the same directory:
+نصب با یک دستور؛ دانلود و بررسی checksum خودکار است.
+Install with one command; download and checksum verification are automatic.
 
 ```bash
-sha256sum --check SHA256SUMS
-sudo bash AntiDPI-ubuntu24-amd64.run
+curl -fsSL https://exirhub.github.io/AntiDPI/install.sh | sudo bash
 ```
 
-For an existing installation, add `--update` to the installer command.
+به‌روزرسانی / Update:
 
-This repository contains the installation website and compiled distribution only. Application backend source is maintained privately. The current build adds SSH provisioning of fresh output servers, latest stable 3x-ui installation/database restoration, and a named reusable x-ui backup catalog.
+```bash
+curl -fsSL https://exirhub.github.io/AntiDPI/install.sh | sudo bash -s -- --update
+```
 
-Native login/API/assets, package integrity and responsive page/download-link checks passed. Clean Ubuntu 24.04 systemd installation, installed HTTPS/API/TCP/service checks and upgrade preserving accounts/state passed in GitHub Actions (run 37696565225). Real destination 3x-ui provisioning remains unverified. See `RELEASE.json` for the exact build and checksum; see `AGENTS.md` for maintenance coordination.
+نصب و ارتقا روی Ubuntu تمیز تأیید شده است. نصب 3x-ui روی مقصد واقعی هنوز آزمایش نشده است.
+Clean Ubuntu install/update verified. Real remote 3x-ui provisioning remains unverified.
 
-Compilation excludes original application Python source and bytecode from the installer. Browser assets and root-readable configuration remain inspectable, and native code can still be reverse engineered.
+Compiled distribution only. See `RELEASE.json` for build details and `AGENTS.md` for repository coordination.
