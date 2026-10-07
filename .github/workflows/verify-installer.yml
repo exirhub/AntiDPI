@@ -1,0 +1,32 @@
+name: Verify published Ubuntu installer
+on:
+  push:
+    paths: ['AntiDPI-ubuntu24-amd64.run', 'SHA256SUMS']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify package integrity
+        run: |
+          sha256sum --check SHA256SUMS
+          bash AntiDPI-ubuntu24-amd64.run --check
+      - name: Install on a clean disposable runner
+        run: sudo bash AntiDPI-ubuntu24-amd64.run --panel-address 127.0.0.1 --skip-acme-install
+      - name: Exercise the installed binary through its public API
+        run: sudo python3 tests/installed_api.py
+      - name: Upgrade preserves accounts and settings
+        run: |
+          sudo python3 -c "import sqlite3; sqlite3.connect('/var/lib/haproxy-configer/panel.sqlite3').backup(sqlite3.connect('/tmp/antidpi-before.sqlite3'))"
+          sudo bash AntiDPI-ubuntu24-amd64.run --update --skip-acme-install
+          sudo python3 tests/upgrade.py
+      - name: Diagnostics
+        if: failure()
+        run: |
+          sudo systemctl status haproxy-configer-panel haproxy-configer-proxy --no-pager || true
+          sudo journalctl -u haproxy-configer-panel -n 40 --no-pager
+          sudo journalctl --namespace=hapcfg -u haproxy-configer-proxy -n 40 --no-pager
