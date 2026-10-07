@@ -13,3 +13,7 @@ The application source is maintained in the private repository `exirhub/anti-dpi
 - A page-only edit may be published without rebuilding the installer, but update the private site source too. A documentation-only source commit after compilation need not change the built source commit recorded in release metadata.
 - Verify Pages deployment, installer and checksum download responses, and SHA-256 of the downloaded file before reporting a release live.
 - Update both repositories' `AGENTS.md` files whenever this coordination procedure or repository paths change. Report blocked systemd/cloud tests accurately rather than claiming a full installation passed.
+
+## Current release validation
+
+Published build e9781c4 passed clean Ubuntu 24.04 systemd install, installed HTTPS/API/TCP/service checks and upgrade preserving accounts/state in run 37696565225. Real remote 3x-ui provisioning remains unverified.

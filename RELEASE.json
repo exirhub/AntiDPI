@@ -9,10 +9,15 @@
     "output-server and x-ui-backup API availability",
     "payload integrity",
     "external SHA-256",
-    "desktop/mobile installation page and download links"
+    "desktop/mobile installation page and download links",
+    "clean Ubuntu 24.04 systemd installation",
+    "installed HTTPS login/API, TCP reload and service controls",
+    "upgrade preserves accounts and state"
   ],
   "validation_pending": [
-    "complete systemd install/update on clean server",
     "real remote 3x-ui provisioning"
-  ]
+  ],
+  "validation_evidence": {
+    "installed_runner": "https://github.com/exirhub/AntiDPI/actions/runs/37696565225"
+  }
 }
