@@ -23,3 +23,4 @@ Published build e9781c4 passed clean Ubuntu 24.04 systemd install, installed HTT
 - Keep the public `install.sh` bootstrap identical to private `site/install.sh`; it is separate from the private root installer. It downloads only the compiled package and matching checksum over HTTPS, verifies before execution, cleans temporary files and forwards options such as `--update`.
 - Keep the page concise, with Persian (RTL) as the default and an English toggle. Commands stay LTR in both languages; language switching preserves the install/update selection.
 - Keep both README install commands consistent with the page. Website/bootstrap edits do not require recompiling an unchanged application binary; retain its exact built source commit in `RELEASE.json`.
+- When changing page JS/CSS, update their content-hash query versions in both HTML copies to prevent stale browser/CDN assets. Verify live interactions after deployment.
