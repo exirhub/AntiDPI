@@ -23,10 +23,14 @@
     "payload extraction matches tested native executable and UI assets",
     "no application source/bytecode/generated C in payload",
     "payload integrity",
-    "external SHA-256"
+    "external SHA-256",
+    "clean Ubuntu 24.04 systemd installation",
+    "installed binary HTTPS/API/TCP/service checks",
+    "upgrade preserves accounts and settings",
+    "live Pages version and bootstrap match source",
+    "live downloaded installer size/SHA-256/checksum link and embedded integrity match release"
   ],
   "validation_pending": [
-    "clean Ubuntu 24.04 systemd installation and upgrade for 0.3.0; this environment has no systemd PID 1",
     "real remote 3x-ui provisioning",
     "public ACME issuance",
     "authenticated Reality"
@@ -34,5 +38,9 @@
   "previous_release_validation": {
     "source_commit": "e9781c4bc42d5df0543816f5a5cf1d088e3d63f6",
     "installed_runner": "https://github.com/exirhub/AntiDPI/actions/runs/37696565225"
+  },
+  "validation_evidence": {
+    "installed_runner": "https://github.com/exirhub/AntiDPI/actions/runs/37887040917",
+    "pages_deployment": "https://github.com/exirhub/AntiDPI/actions/runs/37887040433"
   }
 }
