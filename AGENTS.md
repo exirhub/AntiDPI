@@ -16,7 +16,9 @@ The application source is maintained in the private repository `exirhub/anti-dpi
 
 ## Current release validation
 
-Published build e9781c4 passed clean Ubuntu 24.04 systemd install, installed HTTPS/API/TCP/service checks and upgrade preserving accounts/state in run 37696565225. Real remote 3x-ui provisioning remains unverified.
+Version 0.3.0 ships the unified Origins & outputs page. Native login/API/origins/diagnostics/assets, compiled desktop/mobile navigation, optional SSH, Persian RTL, payload extraction/integrity and SHA-256 checks passed before publication. Clean Ubuntu 24.04 systemd install/upgrade has not been rerun for 0.3.0; this task environment has no systemd PID 1. The previous e9781c4 release passed installed checks and account/state preservation in run 37696565225. Real remote 3x-ui provisioning, public ACME and authenticated Reality remain unverified.
+
+The `.run` payload uses xz compression to keep the compiled distribution compact. Ubuntu 24.04 must have `xz-utils`; the launcher checks for `xz` before extracting. Keep this packaging choice coordinated with the private `packaging/bundle.py` and `packaging/launcher.sh`.
 
 ## Installation-page maintenance
 

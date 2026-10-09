@@ -1,23 +1,38 @@
 {
-  "source_commit": "e9781c4bc42d5df0543816f5a5cf1d088e3d63f6",
+  "version": "0.3.0",
+  "source_commit": "e3659b831f52dc04485281bce4cb5c3ac91b260d",
+  "packaging_commit": "700a908a60b626c601901643ce8f47317a03c985",
   "filename": "AntiDPI-ubuntu24-amd64.run",
-  "sha256": "6713dbd07d551df1693a15d0d911931c192591700527164e1a12e3b89181f20a",
-  "size_bytes": 13099126,
+  "sha256": "f0ad5ddfb20f11e14744ed79ed98f3297ac3b78bde17ff059e2d2bf1da13d865",
+  "size_bytes": 9894114,
   "target": "Ubuntu 24.04 x86_64",
+  "payload_compression": "xz",
+  "release_notes": [
+    "Origins and output servers share one menu and page.",
+    "IP and port only; SSH installation and database restore are optional.",
+    "Safe origin dependency management, independent TLS, inline certificates and real diagnostics.",
+    "Persian/English desktop and mobile interface."
+  ],
   "validation_passed": [
-    "native isolated login/API/assets",
-    "output-server and x-ui-backup API availability",
+    "130 backend/regression tests at source refactor",
+    "four browser suites at source refactor",
+    "four real HAProxy TLS traffic modes at source refactor",
+    "real authenticated TCP/WS/gRPC/XHTTP VLESS transfers and wrong-UUID rejection at source refactor",
+    "native isolated login/API/origins/diagnostics/assets smoke re-run before publication",
+    "compiled desktop/mobile one-menu navigation, legacy output routing, optional SSH and Persian RTL",
+    "payload extraction matches tested native executable and UI assets",
+    "no application source/bytecode/generated C in payload",
     "payload integrity",
-    "external SHA-256",
-    "desktop/mobile installation page and download links",
-    "clean Ubuntu 24.04 systemd installation",
-    "installed HTTPS login/API, TCP reload and service controls",
-    "upgrade preserves accounts and state"
+    "external SHA-256"
   ],
   "validation_pending": [
-    "real remote 3x-ui provisioning"
+    "clean Ubuntu 24.04 systemd installation and upgrade for 0.3.0; this environment has no systemd PID 1",
+    "real remote 3x-ui provisioning",
+    "public ACME issuance",
+    "authenticated Reality"
   ],
-  "validation_evidence": {
+  "previous_release_validation": {
+    "source_commit": "e9781c4bc42d5df0543816f5a5cf1d088e3d63f6",
     "installed_runner": "https://github.com/exirhub/AntiDPI/actions/runs/37696565225"
   }
 }
